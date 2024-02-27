@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   distDir: 'build',
   output: 'export',
+  assetPrefix: "/have-lunch",
 };
 
 export default nextConfig;
