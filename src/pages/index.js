@@ -12,12 +12,11 @@ function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', filename);
- 
   element.style.display = 'none';
   document.body.appendChild(element);
- 
+
   element.click();
- 
+
   document.body.removeChild(element);
 }
 // 给当前上传文件button添加监听事件，一般初始化的时候就可以执行
@@ -63,8 +62,8 @@ const Home = memo(() => {
   );
   return (
     <div>
-      {stateIsShowList[0] ? 
-        <main className={`flex min-h-screen flex-col items-center justify-between py-12 px-10 ${inter.className}`}>  
+      {stateIsShowList[0] ?
+        <main className={`flex min-h-screen flex-col items-center justify-between py-12 px-10 ${inter.className}`}>
           <div className="z-10 max-w-5xl w-full font-mono text-sm">
             <div onClick={() => stateIsShowList[1](false)} style={{cursor: 'pointer'}}>{"<- 后退"}</div>
             <div className='flex' style={{margin: '20px 0'}}>
@@ -87,7 +86,7 @@ const Home = memo(() => {
                     };
                     e.target.value = null;
                   }}/>
-            </div> 
+            </div>
             <div className="flex" style={{ flexFlow: 'wrap' }}>
               {stateLunchList[0].map((item, key) => (
                 <div className="flex" key={item} style={{ paddingRight: '10px', paddingBottom: '10px' }}>
@@ -117,8 +116,8 @@ const Home = memo(() => {
           <div className="relative flex place-items-center "></div>
           <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"></div>
         </main>
-      : 
-        <main className={`flex min-h-screen flex-col items-center justify-between py-24 px-10 ${inter.className}`}>  
+      :
+        <main className={`flex min-h-screen flex-col items-center justify-between py-24 px-10 ${inter.className}`}>
           <div className="z-10 max-w-5xl w-full font-mono text-sm">
             <form onSubmit={handleInput}>
               <input
@@ -132,7 +131,7 @@ const Home = memo(() => {
               <button className="py-4 px-3 bg-blue-500 text-white m-2 rounded-md">保存</button>
             </form>
             <div className='flex'>
-              <div onClick={() => stateIsShowList[1](true)}>午饭列表</div> 
+              <div onClick={() => stateIsShowList[1](true)}>午饭列表</div>
             </div>
           </div>
           <div className="relative flex place-items-center ">
